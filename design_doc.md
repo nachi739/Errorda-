@@ -9,7 +9,24 @@
 
 # 基本設計
 ・UIフロー<br>
-![EErrorda!!遷移図](https://user-images.githubusercontent.com/75469934/151659827-e2321295-39ee-4975-b8de-6c29732a2783.jpeg)
+![EErrorda!!遷移図](https://user-images.githubusercontent.com/75469934/151659827-e2321295-39ee-4975-b8de-6c29732a2783.jpeg) <br>
+
+
+・拡張機能側<br>
+-検索窓の追加<br>
+-アイコンの追加<br>
+-別ウィンドウでのダッシュボードの表示<br>
+・バックエンド側<br>
+-集計<br>
+-ダッシュボードで表示する中身のデータをAPIで取得<br>
+
+・選択した技術<br>
+Vue.js or JavaScript <br>
+（Chrome拡張機能を利用するため）<br>
+PHP + Laravel <br>
+(情報が多いため)<br>
+Heroku <br>
+(簡易的に実現するため)<br>
 
 
 
