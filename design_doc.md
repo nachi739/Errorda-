@@ -9,7 +9,8 @@
 
 # 基本設計
 ・UIフロー<br>
-![EErrorda!!遷移図](https://user-images.githubusercontent.com/75469934/151659827-e2321295-39ee-4975-b8de-6c29732a2783.jpeg) <br>
+![Errorda!!遷移図](https://user-images.githubusercontent.com/75469934/151661742-80968791-1574-4376-82dd-e546c61eb94e.jpeg)
+ <br>
 
 
 ・拡張機能側<br>
