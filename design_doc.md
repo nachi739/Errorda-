@@ -11,6 +11,9 @@
 ・遷移UIフロー<br>
 ![EErrorda!!遷移フロー図](https://user-images.githubusercontent.com/75469934/152122934-9893a020-99c6-4421-aa54-d00b5c42e150.jpeg)
  <br>
+  ・処理フロー<br>
+ ![処理フロー図](https://user-images.githubusercontent.com/75469934/152130169-f2e789b3-f88a-4a95-a72e-a0a18b9b15e4.jpeg)
+<br>
 
 
 ・拡張機能側<br>
@@ -22,7 +25,7 @@
 -ダッシュボードで表示する中身のデータをAPIで取得<br>
 
 ・選択した技術<br>
-Vue.js or JavaScript <br>
+JavaScript <br>
 （Chrome拡張機能を利用するため）<br>
 PHP + Laravel <br>
 (情報が多いため)<br>
