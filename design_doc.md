@@ -12,13 +12,13 @@
 ![EErrorda!!遷移フロー図](https://user-images.githubusercontent.com/75469934/152122934-9893a020-99c6-4421-aa54-d00b5c42e150.jpeg)
  <br>
   ・処理フロー<br>
- ![処理フロー図](https://user-images.githubusercontent.com/75469934/152130169-f2e789b3-f88a-4a95-a72e-a0a18b9b15e4.jpeg)
+  ![処理フロー図(2)](https://user-images.githubusercontent.com/75469934/152151304-99aac1e8-5a79-42dd-b105-2305d0cd1015.jpeg)
 <br>
 
 
 ・拡張機能側<br>
 -アイコンの追加<br>
--ポップアップ画面の表示
+-ポップアップ画面の表示<br>
 -開始・終了・一覧ボタンの追加<br>
 ・バックエンド側<br>
 -集計<br>
@@ -35,4 +35,7 @@ Heroku <br>
 
 
 
-# 実装計画
+# 実装計画<br>
+・拡張機能側のアイコン・ポップアップ表示の作成<br>
+実装工数：　日<br>
+
