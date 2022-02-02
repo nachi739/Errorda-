@@ -8,8 +8,8 @@
 
 
 # 基本設計
-・UIフロー<br>
-![Errorda!!遷移図](https://user-images.githubusercontent.com/75469934/151661742-80968791-1574-4376-82dd-e546c61eb94e.jpeg)
+・遷移UIフロー<br>
+![EErrorda!!遷移フロー図](https://user-images.githubusercontent.com/75469934/152122934-9893a020-99c6-4421-aa54-d00b5c42e150.jpeg)
  <br>
 
 
