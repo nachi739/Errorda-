@@ -12,8 +12,12 @@
 ![EErrorda!!遷移フロー図](https://user-images.githubusercontent.com/75469934/152122934-9893a020-99c6-4421-aa54-d00b5c42e150.jpeg)
  <br>
 
-  ・処理フロー<br>
-  ![処理フロー図(2)](https://user-images.githubusercontent.com/75469934/152151304-99aac1e8-5a79-42dd-b105-2305d0cd1015.jpeg)
+・処理フロー<br>
+![処理フロー図(2)](https://user-images.githubusercontent.com/75469934/152151304-99aac1e8-5a79-42dd-b105-2305d0cd1015.jpeg)
+<br>
+
+・ER図<br>
+![ER図](https://user-images.githubusercontent.com/75469934/152285320-e89ed1be-07d0-4c89-8930-e7f1ec4b0fef.jpeg)
 <br>
 
 
