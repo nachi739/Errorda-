@@ -25,8 +25,8 @@
 - アイコンの追加  
 - ポップアップ表示  
 - レコーディングの開始・終了  
-- どのページを閲覧したか（レコーディング）
 - 何を検索したか（レコーディング）
+- 最初の検索文字列の取得
 - 一覧ページヘの遷移先追加  
 
 #### バックエンド側
@@ -34,6 +34,7 @@
 - 集計  
 - 編集  
 - 閲覧  
+- レコーディング機能  
 - ダッシュボードで表示する中身のデータをAPIで取得  
 
 ## 選択した技術
@@ -97,15 +98,16 @@ Google Aouth
 ### 基礎作成
 
 - 両方のデプロイ（Laravel・chrome拡張機能）
-- Laravelの'/'”Hello World"を返すようにしてデプロイ
-- 拡張機能で'https//localhost/'でgetを投げるとconsoleで"Hello World"が帰ってくる
-- 拡張機能で'https//heroku_url/'でgetを投げるとconsoleで"Hello World"が帰ってくる  
+- Laravelの`/`”Hello World"を返すようにしてデプロイ
+- 拡張機能で`https//localhost/`でgetを投げるとconsoleで"Hello World"が帰ってくる
+- 拡張機能で`https//heroku_url/`でgetを投げるとconsoleで"Hello World"が帰ってくる  
 - 
 
 ### 処理土台作成
 
 拡張機能側  
 - レコーディング機能の追加  
+- レコーディング開始後の最初の検索文字列の取得
 
 バックエンド側  
 - 一覧での確認
