@@ -5,7 +5,7 @@ window.addEventListener('load', (event) => {
     const resHtml = document.getElementById('res-js')
 
     getButton.addEventListener('click', event => {
-      axios.get('http://localhost:8000/').then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
+      axios.get('https://errorda.herokuapp.com/').then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
 
     });
     postButton.addEventListener('click', event => {
