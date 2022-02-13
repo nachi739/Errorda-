@@ -8,7 +8,7 @@ window.addEventListener('load', (event) => {
     getButton.addEventListener('click', event => {
       let frontSideTime= new Date()
       console.log(frontSideTime)
-      axios.get('http://127.0.0.1:8000').then(res =>
+      axios.get('http://127.0.0.1:8000/api/errors').then(res =>
       resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
 
     });
