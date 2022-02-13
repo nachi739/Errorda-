@@ -16,8 +16,9 @@ class CreateErrorsTable extends Migration
         Schema::create('errors', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->string('start_time');
+            $table->string('end_time');
+            $table->json('json')->nullable();
             $table->text('search_key');
             $table->text('dictionary_key');
             $table->text('memo');

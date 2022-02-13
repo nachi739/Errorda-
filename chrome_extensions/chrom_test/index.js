@@ -11,6 +11,6 @@ window.addEventListener('load', (event) => {
     postButton.addEventListener('click', event => {
       axios.post('http://127.0.0.1:8000', {
         text: postText.value,
-      }).then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
+      }).then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data),console.log("test")))
     });
   });
