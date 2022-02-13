@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
-Route::match(['get', 'post'] ,'/', function () {
+Route::get('/{app}', function () {
     return view('index');
-})->where('/', '.*');
+})->where('app', '.*');

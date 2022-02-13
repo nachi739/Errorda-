@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Errors extends Model
 {
-    protected $casts = [
-        "json"=>"json",
-    ];
+    protected $table = 'errors';
+    protected $primaryKey = 'id';
+
 }

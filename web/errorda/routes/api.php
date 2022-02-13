@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['api']], function(){
-    Route::resource('errors', 'Api\ErrorsController' , ['except' => ['create', 'edit']]);
+Route::group(['middleware' => ['api']], function() {
+    Route::get('get', 'ErrorsController@getErrors');
+    Route::post('add', 'ErrorsController@addErrors');
 });
