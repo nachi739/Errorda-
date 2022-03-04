@@ -19,4 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/errors', [ErrorsController::class, 'api']);
+Route::get('/errors', [ErrorsController::class, 'index']);
+// Route::app_post('errors', [ErrorsController::class, 'api']);
+Route::post('/errors', [ErrorsController::class, 'api']);

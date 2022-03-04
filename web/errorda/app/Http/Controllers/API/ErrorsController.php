@@ -7,13 +7,27 @@ use App\Http\Controllers\API\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Errors;
 use DateTimeZone;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class ErrorsController extends Controller
 {
     public function api() {
         $time = now();
+
+
         return $time;
     }
+
+    public function index() {
+
+        return "Hello World";
+    }
+
+    public function post() {
+        return "hello";
+    }
+
     // public function getErrors(){
     //     $errors = Errors::all();
     //     return $errors;
