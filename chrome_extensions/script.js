@@ -1,4 +1,3 @@
-
 window.addEventListener('load', (event) => { //webページを読み込む際にアクションを行う
     const getButton = document.getElementById('get-js')
     const postText = document.getElementById('post-text')
@@ -18,6 +17,3 @@ window.addEventListener('load', (event) => { //webページを読み込む際に
             }).then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
         });
     });
-
-
-
