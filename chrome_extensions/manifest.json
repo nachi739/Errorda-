@@ -1,15 +1,15 @@
 {
-    "name": "Omnibox - New Tab Search",
+    "name": "Errorda - New Tab Search",
     "description": "Type 'nt' plus a search term into the Omnibox to open search in new tab.",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
-      "service_worker": "background.js"
+        "service_worker": "background.js"
     },
     "omnibox": { "keyword" : "nt" },
     "action": {
-
+        "default_popup": "popup.html"
     }
 
 
-  }
+}
