@@ -31,18 +31,15 @@ window.onload = function () {
     const resHtml = document.getElementById('res-js')
     let searching;
 
-    postButton.onclick = function () { //新規作成は確認　search_keyにテキスト保存まだ
-        fetch('http://127.0.0.1:3000/api/v1/user/stumblings/', {
-            search_key: postText.value,
-            method: 'POST',
-
-        })
+    var post_url = "http://127.0.0.1:3000/api/v1/user/stumblings/";
+    postButton.onclick = function (res) { //新規作成は確認　search_keyにテキスト保存まだ
+        let params = {method: 'POST',headers: {'Content-type': 'application/json;charset=utf-8'},body: JSON.stringify({search_key: postText.value})};
+        fetch(post_url, params)
         .then(function (res) {
             return res.json();
         })
-        .then(function (jsonData) {
-            console.log(jsonData);
-    })
+        .then(res => res.text())
+
     }
 
 
