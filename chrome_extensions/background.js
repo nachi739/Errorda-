@@ -9,29 +9,46 @@ chrome.omnibox.onInputEntered.addListener((text) => {
     chrome.tabs.create({ url: newURL });
 });
 
+//一覧画面遷移
 window.onload = function () {
-document.getElementById("itiran").onclick = function () {
-    var newURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
-    chrome.tabs.create({ url: newURL });
-};
-};
+    document.getElementById("list-js").onclick = function () {
+        var newURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
+        chrome.tabs.create({ url: newURL });
+    };
 
-//window.onload = function () {
+    var url = "http://127.0.0.1:3000/api/v1/user/stumblings/searching/";
+    fetch(url) //ユーザ情報を認識する
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (jsonData) {
+            console.log(jsonData);
+    })
+
     const getButton = document.getElementById('get-js')
     const postText = document.getElementById('post-text')
     const postButton = document.getElementById('post-js')
     const resHtml = document.getElementById('res-js')
     let searching;
 
-        axios.get('http://127.0.0.1:3000/api/v1/user/stumblings/searching/').then(res => searching = res.data);
+    postButton.onclick = function () { //新規作成は確認　search_keyにテキスト保存まだ
+        fetch('http://127.0.0.1:3000/api/v1/user/stumblings/', {
+            search_key: postText.value,
+            method: 'POST',
 
-        getButton.addEventListener('click', event => {
-            axios.get(`http://127.0.0.1:3000/api/v1/user/stumblings/${searching.id}`)
-            .then(res =>resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))});
+        })
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (jsonData) {
+            console.log(jsonData);
+    })
+    }
 
-        postButton.addEventListener('click', event => { //buttonクリック時に行うアクション
-            axios.post('http://127.0.0.1:3000/api/v1/user/stumblings', {
-                search_key: postText.value,
-            }).then(res => resHtml.insertAdjacentText('afterbegin', JSON.stringify(res.data)))
-        });
-  //  };
+
+
+
+//var url2 = `http://127.0.0.1:3000/api/v1/user/stumblings/${searching.id}`;
+
+
+};

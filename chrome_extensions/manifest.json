@@ -3,6 +3,10 @@
     "description": "Type 'nt' plus a search term into the Omnibox to open search in new tab.",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": ["tabs"],
+    "host_permissions": [
+        "http://127.0.0.1:3000/api/v1/user/stumblings/*"
+    ],
     "background": {
         "service_worker": "background.js"
     },
@@ -10,6 +14,7 @@
     "action": {
         "default_popup": "popup.html"
     }
+
 
 
 }
