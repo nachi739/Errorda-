@@ -1,0 +1,9 @@
+<h1>Stumblings#edit</h1>
+
+<%= form_for(@stumbling, url: api_v1_user_stumbling_path(@stumbling)) do |f| %>
+
+    <tr>
+        <td><%= f.text_field :search_key %></td>
+        <td><%= f.text_field :dictiorary_key %></td>
+    <div><%= f.submit "更新する" %></div>
+<% end %>

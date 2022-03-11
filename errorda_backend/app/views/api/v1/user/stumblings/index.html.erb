@@ -1,0 +1,15 @@
+<h1>Stumblings#index</h1>
+<% @stumblings.each do |stumbling| %>
+    <div>
+    <%= stumbling.search_key %>
+        <p><%= stumbling.dictiorary_key %></p>
+        <p><%= stumbling.end_time %></p>
+    <%= link_to "編集", edit_api_v1_user_stumbling_path(stumbling) %>
+
+
+    </div>
+<% end %>
+
+
+
+

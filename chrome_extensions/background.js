@@ -12,8 +12,8 @@ chrome.omnibox.onInputEntered.addListener((text) => {
 //一覧画面遷移
 window.onload = function () {
     document.getElementById("list-js").onclick = function () {
-        var newURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
-        chrome.tabs.create({ url: newURL });
+        var listURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
+        chrome.tabs.create({ url: listURL });
     };
 
     var url = "http://127.0.0.1:3000/api/v1/user/stumblings/searching/";
