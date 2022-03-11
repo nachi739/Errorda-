@@ -23,6 +23,7 @@ window.onload = function () {
         })
         .then(function (jsonData) {
             console.log(jsonData);
+            console.log(jsonData.id);
     })
 
     const getButton = document.getElementById('get-js')
@@ -42,8 +43,20 @@ window.onload = function () {
 
     }
 
+    var get_url = `http://127.0.0.1:3000/api/v1/user/stumblings/searching`;
 
+    getButton.onclick = function (res) {
+    fetch(get_url)
+        .then(function (res) {
+            return res.json();
+        })
+        .then(function (jsonData) {
+            var getUrl = `http://127.0.0.1:3000/api/v1/user/stumblings/${jsonData.id}`;
+            chrome.tabs.create({ url: getUrl });
 
+        })
+
+    }
 
 //var url2 = `http://127.0.0.1:3000/api/v1/user/stumblings/${searching.id}`;
 
