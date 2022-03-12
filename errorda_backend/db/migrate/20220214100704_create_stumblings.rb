@@ -7,6 +7,7 @@ class CreateStumblings < ActiveRecord::Migration[6.1]
       t.string :dictiorary_key #本タイトル
       t.datetime :end_time #Error解決終了時刻のため
       t.timestamps #create_atでError解決開始時刻
+      t.text :memo
     end
   end
 end

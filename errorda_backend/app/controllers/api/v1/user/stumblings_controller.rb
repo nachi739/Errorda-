@@ -24,7 +24,7 @@ class Api::V1::User::StumblingsController < ApplicationController
         @stu.end_time =  Time.now
         @stu.dictiorary_key = "本タイトルを入力してください"
         @stu.save
-        redirect_to '/'
+        redirect_to action: :edit
     end
     def show
     end
@@ -48,7 +48,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
 
     def update_params
-        params.require(:stumbling).permit( :name, :search_key, :dictiorary_key)
+        params.require(:stumbling).permit( :name, :search_key, :dictiorary_key, :memo)
     end
 
     def end_params

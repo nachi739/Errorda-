@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_100704) do
     t.string "user_name"
     t.text "search_key"
     t.string "dictiorary_key"
+    t.text "memo"
     t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
