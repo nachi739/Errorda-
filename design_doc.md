@@ -55,7 +55,7 @@ Heroku（簡易的に実現するため）
 
 ### ER図
 
-![ER図](https://user-images.githubusercontent.com/75469934/152498453-9bc75ff5-06fc-4c6a-8f1c-ece96614be94.jpeg)
+![ER図](https://user-images.githubusercontent.com/75469934/158004659-96f9368b-0d01-424b-8d7d-8df944280f10.jpeg)
 
 
 
