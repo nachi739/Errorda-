@@ -1,5 +1,1 @@
-errorda_backend/log/*
-errorda_backend/tmp/*
-errorda_backend!/log/.keep
-errorda_backend!/tmp/.keep
 
