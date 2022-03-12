@@ -22,7 +22,7 @@ class Api::V1::User::StumblingsController < ApplicationController
     def end_time
         @stu = Stumbling.find_by(id: params[:id])
         @stu.end_time =  Time.now
-        @stu.dictiorary_key = "本タイトルを入力してください"
+        @stu.dictionary_key = "本タイトルを入力してください"
         @stu.save
         redirect_to action: :edit
     end
@@ -48,7 +48,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
 
     def update_params
-        params.require(:stumbling).permit( :name, :search_key, :dictiorary_key, :memo)
+        params.require(:stumbling).permit( :name, :search_key, :dictionary_key, :memo)
     end
 
     def end_params

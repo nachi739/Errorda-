@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_100704) do
   create_table "stumblings", force: :cascade do |t|
     t.string "user_name"
     t.text "search_key"
-    t.string "dictiorary_key"
+    t.string "dictionary_key"
     t.text "memo"
     t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
