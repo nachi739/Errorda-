@@ -18,10 +18,13 @@ window.onload = function () {
         })
         .then(function (jsonData) {
             const searched = document.getElementById('searched')
+            const searching = document.getElementById('searching')
             if (jsonData) { //検索窓の表示・非表示
                 searched.style.visibility = "hidden";
+                searching.style.visibility = "visible";
             } else {
                 searched.style.visibility = "visible"
+                searching.style.visibility = "hidden";
             }
             console.log(jsonData); //検証でどのエラーを取ってきているか確認
             console.log(jsonData.id); //検証でidを確認するため

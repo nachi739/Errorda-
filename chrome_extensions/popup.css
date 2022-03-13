@@ -12,6 +12,10 @@ header {
     padding: 0 4%;
     color: red;
 }
+/* エラー検索中テキスト */
+h3 {
+    font-family: sans-serif;
+}
 .group {
     --gap: 0.2rem;
     display: flex;
@@ -69,9 +73,6 @@ header {
     border-color: gray;
     box-shadow: 2px 2px gray;
 }
-
-
-
-
-
-
+.btn:active {
+    transform: translateY(2px);
+}
