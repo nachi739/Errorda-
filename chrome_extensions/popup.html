@@ -1,28 +1,45 @@
 
+<!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="error解決の記録">
+    <!--  CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="popup.css" rel="stylesheet">
+    <title>Errorda!!</title>
+</head>
+<body>
+    <script src="./background.js"></script>
+    <script src="./script.js"></script>
 
-        <title>Document</title>
-    </head>
-    <body>
+    <header>
+        <h1>Errorda!!</h1>
+    </header>
 
-
-        <script src="./background.js"></script>
-        <script src="./script.js"></script>
-
-
-        <div>
+    <ul  id="searched" class="group">
+        <li>
             <input type="text" id="post-text">
-            <button id="post-js">error検索</button>
-        </div>
+        </li>
+        <li>
+            <button id="post-js" class="btn">error検索</button>
+        </li>
+    </ul>
 
-        <button id="get-js">error解決</button>
 
-        <input type="button" id="list-js" value="一覧画面" />
+    <ul class="group">
+        <li>
+            <button id="get-js" class="btn">error解決</button>
+        </li>
+    </ul>
 
-            <p id="res-js"></p>
-    </body>
+    <ul class="group">
+        <li>
+            <button id="list-js" class="btn">一覧画面</button>
+        </li>
+    </ul>
+
+</body>
+
 </html>

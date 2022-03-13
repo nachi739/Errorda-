@@ -10,20 +10,28 @@
 // });
 
 window.onload = function () {
-    document.getElementById("list-js").onclick = function () { //一覧画面遷移
-        var listURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
-        chrome.tabs.create({ url: listURL });
-    };
-
     var url = "http://127.0.0.1:3000/api/v1/user/stumblings/searching/";
+
     fetch(url) //ユーザ情報を認識する
         .then(function (res) {
             return res.json();
         })
         .then(function (jsonData) {
+            const searched = document.getElementById('searched')
+            if (jsonData) { //検索窓の表示・非表示
+                searched.style.visibility = "hidden";
+            } else {
+                searched.style.visibility = "visible"
+            }
             console.log(jsonData); //検証でどのエラーを取ってきているか確認
             console.log(jsonData.id); //検証でidを確認するため
-    })
+        })
+
+
+    document.getElementById("list-js").onclick = function () { //一覧画面遷移
+        var listURL = 'http://127.0.0.1:3000/api/v1/user/stumblings/';
+        chrome.tabs.create({ url: listURL });
+    };
 
     const getButton = document.getElementById('get-js')
     const postText = document.getElementById('post-text')
