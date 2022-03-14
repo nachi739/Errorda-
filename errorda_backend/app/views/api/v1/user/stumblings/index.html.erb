@@ -1,5 +1,9 @@
+
 <h1>Stumblings#index</h1>
-<% @stumblings.each do |stumbling| %>
+
+<%
+=begin%>
+ <% @stumblings.each do |stumbling| %>
     <div>
     <%= stumbling.search_key %>
         <p><%= stumbling.dictionary_key %></p>
@@ -10,7 +14,25 @@
 
     </div>
 <% end %>
+<%
+=end%>
+
+<div class="row row-no-gutters">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row row-no-gutters">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row row-no-gutters">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
 
 
 
+
+<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
 
