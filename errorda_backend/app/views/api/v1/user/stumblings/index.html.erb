@@ -1,38 +1,20 @@
-
-<h1>Stumblings#index</h1>
-
-<%
-=begin%>
- <% @stumblings.each do |stumbling| %>
-    <div>
-    <%= stumbling.search_key %>
-        <p><%= stumbling.dictionary_key %></p>
-        <p><%= stumbling.memo %></p>
-        <p><%= stumbling.end_time %></p>
-    <%= link_to "編集", edit_api_v1_user_stumbling_path(stumbling) %>
-
-
-    </div>
-<% end %>
-<%
-=end%>
-
-<div class="row row-no-gutters">
-  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
-<div class="row row-no-gutters">
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
-<div class="row row-no-gutters">
-  <div class="col-xs-6">.col-xs-6</div>
-  <div class="col-xs-6">.col-xs-6</div>
-</div>
-
-
-
-
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
-
+<h2>MyDictionary</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">dictionary_key</th>
+            <th scope="col">search_key</th>
+            <th scope="col">error解決に至るまでのメモ</th>
+        </tr>
+    </thead>
+    <tbody >
+    <% @stumblings.each do |stumbling| %>
+        <tr >
+            <td ><%= stumbling.dictionary_key %></td>
+            <td ><%= stumbling.search_key %></td>
+            <td ><%= stumbling.memo %></td>
+            <td ><%= link_to '編集',edit_api_v1_user_stumbling_path(stumbling) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
