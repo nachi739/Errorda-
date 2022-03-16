@@ -2,16 +2,19 @@
 <form>
     <div class="form-group">
         <label for="formGroupExampleInput">search_key</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" <%= f.text_field :search_key %>
+        <input type="text" class="form-control border-danger" id="formGroupExampleInput" <%= f.text_field :search_key %>
     </div>
+    </br>
     <div class="form-group">
         <label for="formGroupExampleInput2">dictionary_key</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="本タイトルを入力してください" <%= f.text_field :dictionary_key %>
+        <input type="text" class="form-control border-primary" id="formGroupExampleInput2" placeholder="本タイトルを入力してください" <%= f.text_field :dictionary_key %>
     </div>
+    </br>
     <div class="form-group">
-        <label for="formGroupExampleInput3">Errorda</label>
-        <%= f.text_area :memo , size: "20x10", class: "form-control"%>
+        <label for="formGroupExampleInput3">error解決に至るまでのメモ</label>
+        <%= f.text_area :memo , size: "25x15", class: "form-control"%>
     </div>
     <div><%= f.submit "更新する" %></div>
 </form>
 <% end %>
+
