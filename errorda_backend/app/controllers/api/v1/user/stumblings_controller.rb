@@ -45,7 +45,7 @@ class Api::V1::User::StumblingsController < ApplicationController
         #今なんの検索をしているのかを向こうに渡している
 
         if searching_error == nil
-            render head :not_found #リソースが存在しないエラーを渡す
+            head :not_found #リソースが存在しないエラーを渡す
         else
             render json: searching_error
         end
