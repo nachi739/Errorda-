@@ -49,7 +49,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
 
     def update_params
-        params.require(:stumbling).permit( :name, :dictionary_key, :memo)
+        params.require(:stumbling).permit( :name, :dictionary_key, :memo) #search_keyは変更不可にするため外しています
     end
 
 end
