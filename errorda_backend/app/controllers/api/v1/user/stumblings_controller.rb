@@ -29,7 +29,7 @@ class Api::V1::User::StumblingsController < ApplicationController
     def show
     end
     def update
-        p params #postで投げられた値を更新する
+        p params #paramsの内容をログに出力している
 
         @stumbling = Stumbling.find_by(id: params[:id])
         @stumbling.update(update_params)
