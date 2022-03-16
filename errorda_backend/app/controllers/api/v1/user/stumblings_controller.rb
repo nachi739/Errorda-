@@ -41,10 +41,14 @@ class Api::V1::User::StumblingsController < ApplicationController
     def searching
         user = User.find_by(name: 'error') || User.create(name: 'error')
 
-        searching_error = user.stumblings.where(end_time: nil).first#  || ''
+        searching_error = user.stumblings.where(end_time: nil).first
         #今なんの検索をしているのかを向こうに渡している
 
-        render json: searching_error
+        if searching_error == nil
+            render head :not_found #リソースが存在しないエラーを渡す
+        else
+            render json: searching_error
+        end
     end
 
 
