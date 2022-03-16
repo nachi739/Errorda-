@@ -14,7 +14,7 @@ class Api::V1::User::StumblingsController < ApplicationController
             @stu = Stumbling.new(user_name: user.name, search_key: params[:search_key])
             @stu.save
         p params #postで投げられた値を受け取る
-        render json: {test:"test"}
+        render head :created #成功したことを教える
     end
     def edit
         @stumbling = Stumbling.find_by(id: params[:id])
