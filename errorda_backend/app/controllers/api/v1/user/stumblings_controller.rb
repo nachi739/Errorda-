@@ -31,7 +31,8 @@ class Api::V1::User::StumblingsController < ApplicationController
     def update
         p params #paramsの内容をログに出力している
 
-        @stumbling = Stumbling.find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
+        @stumbling = Stumbling.find_by( id: params[:id])
         @stumbling.update(update_params)
         redirect_to '/'
 
@@ -48,7 +49,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
 
     def update_params
-        params.require(:stumbling).permit( :name, :search_key, :dictionary_key, :memo)
+        params.require(:stumbling).permit( :name, :dictionary_key, :memo)
     end
 
 end
