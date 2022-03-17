@@ -2,7 +2,7 @@
 <form>
     <div class="form-group">
         <label for="formGroupExampleInput">search_key(変更不可)</label>
-        <input type="text" class="form-control bg-warning text-dark bg-opacity-10" id="formGroupExampleInput" <%= f.text_field :search_key %>
+        <div class="form-control bg-warning text-danger bg-opacity-10"><%= @stumbling.search_key %></div>
     </div>
     </br>
     <div class="form-group">
