@@ -1,19 +1,9 @@
-<%= form_for(@stumbling, url: api_v1_user_stumbling_path(@stumbling)) do |f| %>
-<form>
-    <div class="form-group">
-        <label for="formGroupExampleInput">search_key(変更不可)</label>
-        <div class="form-control bg-warning text-danger bg-opacity-10"><%= @stumbling.search_key %></div>
-    </div>
-    </br>
-    <div class="form-group">
-        <label for="formGroupExampleInput2">dictionary_key</label>
-        <input type="text" <%= f.text_field :dictionary_key, class:"form-control bg-warning text-dark bg-opacity-10", id:"formGroupExampleInput2", placeholder:"本タイトルを入力してください" %>
-    </div>
-    </br>
-    <div class="form-group">
-        <label for="formGroupExampleInput3">error解決に至るまでのメモ</label>
-        <%= f.text_area :memo , size: "25x15", class: "form-control bg-warning text-dark bg-opacity-10"%>
-    </div>
-    <div><%= f.submit "更新する" %></div>
-</form>
+<%= form_with(model: @stumbling, url: api_v1_user_stumbling_path, method: "patch") do |f| %>
+    <div>search_key(変更不可)</div>
+    <p class="form-control bg-warning text-danger bg-opacity-10"><%= @stumbling.search_key %></p>
+    <%= f.label :dictionary_key, "dictionary_key" %>
+    <%= f.text_field :dictionary_key , class:"form-control bg-warning text-dark bg-opacity-10", placeholder:"本タイトルを入力してください" %>
+    <%= f.label :memo, "error解決に至るまでのメモ" %>
+    <%= f.text_area :memo , size: "25x15", class: "form-control bg-warning text-dark bg-opacity-10" %>
+    <%= f.submit "更新する" %>
 <% end %>
