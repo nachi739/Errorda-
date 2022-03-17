@@ -17,10 +17,10 @@ class Api::V1::User::StumblingsController < ApplicationController
         render head :created #成功したことを教える
     end
     def edit
-        @stumbling = Stumbling.find_by(id: params[:id])
+        @stumbling = Stumbling.find(params[:id])
     end
     def end_time
-        @stu = Stumbling.find_by(id: params[:id])
+        @stu = Stumbling.find(params[:id])
         @stu.end_time =  Time.now
         @stu.dictionary_key = "本タイトルを入力してください"
         @stu.save
@@ -31,8 +31,8 @@ class Api::V1::User::StumblingsController < ApplicationController
     def update
         p params #paramsの内容をログに出力している
 
-        @user = User.find_by(id: params[:id])
-        @stumbling = Stumbling.find_by( id: params[:id])
+        #@user = User.find_by(id: params[:id])
+        @stumbling = Stumbling.find(params[:id])
         @stumbling.update(update_params)
         redirect_to root_path
 
