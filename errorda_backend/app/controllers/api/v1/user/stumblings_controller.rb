@@ -34,7 +34,7 @@ class Api::V1::User::StumblingsController < ApplicationController
         @user = User.find_by(id: params[:id])
         @stumbling = Stumbling.find_by( id: params[:id])
         @stumbling.update(update_params)
-        redirect_to '/'
+        redirect_to root_path
 
 
     end
