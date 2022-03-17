@@ -22,7 +22,7 @@ class Api::V1::User::StumblingsController < ApplicationController
     def end_time
         @stu = Stumbling.find(params[:id])
         @stu.end_time =  Time.now
-        @stu.dictionary_key = "本タイトルを入力してください"
+        #@stu.dictionary_key = "本タイトルを入力してください"
         @stu.save
         redirect_to action: :edit #end_timeを保存した後編集画面遷移
     end
@@ -35,8 +35,6 @@ class Api::V1::User::StumblingsController < ApplicationController
         @stumbling = Stumbling.find(params[:id])
         @stumbling.update(update_params)
         redirect_to root_path
-
-
     end
     def searching
         user = User.find_by(name: 'error') || User.create(name: 'error')
@@ -50,8 +48,6 @@ class Api::V1::User::StumblingsController < ApplicationController
             render json: searching_error
         end
     end
-
-
     def update_params
         params.require(:stumbling).permit( :name, :dictionary_key, :memo) #search_keyは変更不可にするため外しています
     end
