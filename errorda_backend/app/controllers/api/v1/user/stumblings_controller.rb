@@ -44,7 +44,7 @@ class Api::V1::User::StumblingsController < ApplicationController
         searching_error = user.stumblings.where(end_time: nil).first
         #今なんの検索をしているのかを向こうに渡している
 
-        if searching_error == nil
+        if searching_error.nil?
             head :not_found #リソースが存在しないエラーを渡す
         else
             render json: searching_error
