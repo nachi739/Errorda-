@@ -6,7 +6,8 @@ class Api::V1::User::StumblingsController < ApplicationController
     protect_from_forgery
 
     def index
-        @stumblings = Stumbling.all #veiw側で表示するため
+        #@stumblings = Stumbling.all #veiw側で表示するため
+        @stumblings = Stumbling.all.page(params[:page])
     end
     def create
         user = User.find_by(name: 'error') || User.create(name: 'error')
@@ -22,7 +23,6 @@ class Api::V1::User::StumblingsController < ApplicationController
     def end_time
         @stu = Stumbling.find(params[:id])
         @stu.end_time =  Time.now
-        #@stu.dictionary_key = "本タイトルを入力してください"
         @stu.save
         redirect_to action: :edit #end_timeを保存した後編集画面遷移
     end
