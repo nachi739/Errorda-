@@ -7,7 +7,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
     def index
         #@stumblings = Stumbling.all #veiw側で表示するため
-        @stumblings = Stumbling.all.page(params[:page])
+        @stumblings = Stumbling.all.page(params[:page]).per(5)
     end
     def create
         user = User.find_by(name: 'error') || User.create(name: 'error')
