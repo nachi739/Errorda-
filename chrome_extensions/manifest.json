@@ -1,6 +1,7 @@
 {
     "name": "Errorda!!",
-    "version": "1.0",
+    "description":"error検索の記録",
+    "version": "1.0.0",
     "manifest_version": 3,
     "permissions": ["tabs"],
     "host_permissions": [
