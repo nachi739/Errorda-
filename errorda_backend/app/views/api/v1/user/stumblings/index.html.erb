@@ -5,6 +5,7 @@
             <th scope="col">dictionary_key</th>
             <th scope="col">search_key</th>
             <th scope="col">error解決に至るまでのメモ</th>
+            <th scope="col">解決までに掛かった時間</th>
         </tr>
     </thead>
     <tbody >
@@ -13,7 +14,7 @@
             <td ><%= stumbling.dictionary_key %></td>
             <td ><%= stumbling.search_key %></td>
             <td ><%= stumbling.memo %></td>
-            <td ><%= stumbling.end_time %></td>
+            <td ><%= (stumbling.end_time - stumbling.created_at).to_i/60 %>分</td>
             <td ><%= link_to '編集', edit_api_v1_user_stumbling_path(stumbling) %></td>
         </tr>
     <% end %>

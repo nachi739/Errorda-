@@ -1,4 +1,8 @@
 ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%H時間%M分%S秒"
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
