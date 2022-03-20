@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <%= form_with(model: @stumbling, url: api_v1_user_stumbling_path, method: "patch") do |f| %>
+        <%= form_with(model: @stumbling, url: api_v1_user_stumbling_path, method: :patch) do |f| %>
             <div>search_key(変更不可)</div>
             <p class="text-secondary text-opacity-30 pt-2"><%= @stumbling.search_key %></p>
             <%= f.label :dictionary_key, "dictionary_key" %>
