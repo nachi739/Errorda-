@@ -1,6 +1,6 @@
 <h2>・MyDictionary</h2>
 <table class="table table-striped">
-    <thead>
+<thead>
         <tr>
             <th scope="col">dictionary_key</th>
             <th scope="col">search_key</th>
@@ -13,7 +13,8 @@
             <td ><%= stumbling.dictionary_key %></td>
             <td ><%= stumbling.search_key %></td>
             <td ><%= stumbling.memo %></td>
-            <td ><%= link_to '編集',edit_api_v1_user_stumbling_path(stumbling) %></td>
+            <td ><%= stumbling.end_time %></td>
+            <td ><%= link_to '編集', edit_api_v1_user_stumbling_path(stumbling) %></td>
         </tr>
     <% end %>
     </tbody>
