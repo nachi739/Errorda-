@@ -25,7 +25,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
   def end_time
     @stu = Stumbling.find(params[:id])
-    @stu.end_time =  Time.now
+    @stu.end_time =  Time.current
     @stu.memo =
     "参考URL
     ・
