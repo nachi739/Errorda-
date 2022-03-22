@@ -9,9 +9,7 @@ window.onload = function () {
     //const baseUrl ="" //プロダクト用
     const url = `${baseUrl}/api/v1/user/stumblings/searching`;
     fetch(url) //ユーザ情報を認識する
-        .then(function (res) {
-            return res.json();
-        })
+        .then(res => res.json())
         .then(function (jsonData) {
             if (jsonData) { //検索窓の表示・非表示
                 searched.style.visibility = "hidden";
@@ -35,9 +33,7 @@ window.onload = function () {
             body: JSON.stringify({search_key: postText.value})
         };
         fetch(postUrl, params)
-        .then(function (res) {
-            return res.json();
-        })
+        .then(res => res.json());
         const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(postText.value);
         chrome.tabs.create({ url: searchURL }); //新規タブでsearch_keyの内容を検索
     }
@@ -45,9 +41,10 @@ window.onload = function () {
     const getUrl = `${baseUrl}/api/v1/user/stumblings/searching`; //json形式でend_timeがnullのものを取得
     getButton.onclick = function (res) {
     fetch(getUrl)
-        .then(function (res) {
-            return res.json();
-        })
+        //.then(function (res) {
+        //    return res.json();
+        //})
+        .then(res => res.json()) //上記のコードを簡略化
         .then(function (jsonData) {
             const getUrlId = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`; //jsonDataに入っているidを取得
             chrome.tabs.create({ url: getUrlId });
