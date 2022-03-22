@@ -29,7 +29,11 @@ window.onload = function () {
     const postButton = document.getElementById('post-js');
     const postUrl = `${baseUrl}/api/v1/user/stumblings/`;
     postButton.onclick = function (res) { //新規作成は確認　search_keyにテキスト保存確認
-        let params = {method: 'POST',headers: {'Content-type': 'application/json;charset=utf-8'},body: JSON.stringify({search_key: postText.value})};
+        const params = {
+            method: 'POST',
+            headers: {'Content-type': 'application/json;charset=utf-8'},
+            body: JSON.stringify({search_key: postText.value})
+        };
         fetch(postUrl, params)
         .then(function (res) {
             return res.json();
