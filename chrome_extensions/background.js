@@ -27,10 +27,10 @@ window.onload = function () {
     };
     const postText = document.getElementById('post-text');
     const postButton = document.getElementById('post-js');
-    const post_url = `${baseUrl}/api/v1/user/stumblings/`;
+    const postUrl = `${baseUrl}/api/v1/user/stumblings/`;
     postButton.onclick = function (res) { //新規作成は確認　search_keyにテキスト保存確認
         let params = {method: 'POST',headers: {'Content-type': 'application/json;charset=utf-8'},body: JSON.stringify({search_key: postText.value})};
-        fetch(post_url, params)
+        fetch(postUrl, params)
         .then(function (res) {
             return res.json();
         })
@@ -38,15 +38,15 @@ window.onload = function () {
         chrome.tabs.create({ url: searchURL }); //新規タブでsearch_keyの内容を検索
     }
     const getButton = document.getElementById('get-js');
-    const get_url = `${baseUrl}/api/v1/user/stumblings/searching`; //json形式でend_timeがnullのものを取得
+    const getUrl = `${baseUrl}/api/v1/user/stumblings/searching`; //json形式でend_timeがnullのものを取得
     getButton.onclick = function (res) {
-    fetch(get_url)
+    fetch(getUrl)
         .then(function (res) {
             return res.json();
         })
         .then(function (jsonData) {
-            const getUrl = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`; //jsonDataに入っているidを取得
-            chrome.tabs.create({ url: getUrl });
+            const getUrlId = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`; //jsonDataに入っているidを取得
+            chrome.tabs.create({ url: getUrlId });
         })
     }
 };
