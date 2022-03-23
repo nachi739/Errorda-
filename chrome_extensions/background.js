@@ -5,8 +5,8 @@ window.onload = function () {
         searched.style.visibility = "visible";
         searching.style.visibility = "hidden";
     }
-    const baseUrl = "http://127.0.0.1:3000"; //開発用
-    //const baseUrl ="" //プロダクト用
+    //const baseUrl = "http://127.0.0.1:3000"; //開発用
+    const baseUrl ="https://errorda-backend.herokuapp.com/" //プロダクト用
     const url = `${baseUrl}/api/v1/user/stumblings/searching`;
     fetch(url) //ユーザ情報を認識する
         .then(res => res.json())
