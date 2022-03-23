@@ -31,7 +31,7 @@
 
 ## 利用方法
 
-1. chrom_extensionsのダウンロード
+1. chrome_extensionsのダウンロード
 2. パッケージ化されていない拡張機能を読み込む
 3.
 4.
@@ -43,27 +43,28 @@
 
 | No  | 機能             |                         |
 | --- | ---------------- | ----------------------- |
-| 1   | Error検索        |      |
-| 2   | 解決時間の記録     |  |
-| 3   | 解決に至るまでのメモ|        |
-| 4   | データベース保存   |    |
+| 1   | Error文の保存         |ChromeExtensions      |
+| 2   | Error文のChrome検索    |ChromeExtensions  |
+| 3   | 登録したErrorの編集機能|Ruby on Rails        |
+| 4   | 解決までの時間計測     |Ruby on Rails    |
 
 ## 使用技術
 
 - Javascript
--
--
--
--
+- Ruby 2.6.5
+- Ruby on Rails
+- Chrome Extensions 3
+- Bootstrap 5
+- PostgreSQL
 
 ## GIF
 
 ### 工夫した点
 
-###ChromExtensionsを導入したこと
+### ChromeExtensionsを導入したこと
 
 ## 今後の追加したい機能
 
 - 現在個人利用を想定しているためいろんな方に使ってもらえるようにユーザー分岐機能
-- ChromExtensionsへの公開
+- chrome ウェブストアへの公開
 -
