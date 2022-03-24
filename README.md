@@ -48,12 +48,13 @@ https://drive.google.com/drive/folders/108RTGf3uz-X9Ge0ZWMlEp0CLeyDDgqGu?usp=sha
 
 ## 機能一覧
 
-| No  | 機能             |                         |
-| --- | ---------------- | ----------------------- |
-| 1   | Error文の保存         |ChromeExtensions      |
-| 2   | Error文のChrome検索    |ChromeExtensions  |
-| 3   | 登録したErrorの編集機能|Ruby on Rails        |
-| 4   | 解決までの時間計測     |Ruby on Rails    |
+| No  | 機能             |
+| --- | ---------------- |
+| 1   | Chrome拡張機能でのError文の保存         |
+| 2   | Chrome拡張機能でのError文のChrome検索    |
+| 3   | 登録したErrorの編集機能|
+| 3   | 検索した文と改めて今回のErrorに対するタイトルの保存|
+| 4   | 解決までの時間計測     |
 
 ## 使用技術
 
