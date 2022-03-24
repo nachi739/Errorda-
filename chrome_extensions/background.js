@@ -1,4 +1,6 @@
 window.onload = function () {
+    let str = prompt('ユーザー名を登録して下さい');
+    alert(str);
     const searched = document.getElementById('searched');
     const searching = document.getElementById('searching');
     if(searched.style.visibility = "hidden"){
