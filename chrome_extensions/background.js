@@ -5,8 +5,8 @@ window.onload = function () {
         searched.style.visibility = "visible";
         searching.style.visibility = "hidden";
     }
-    //const baseUrl = "http://127.0.0.1:3000"; //開発用
-    const baseUrl ="https://errorda-backend.herokuapp.com/" //プロダクト用
+    const baseUrl = "http://127.0.0.1:3000"; //開発用
+    //const baseUrl ="https://errorda-backend.herokuapp.com/" //プロダクト用
     const url = `${baseUrl}/api/v1/user/stumblings/searching`;
     fetch(url) //ユーザ情報を認識する
         .then(res => res.json())
@@ -26,7 +26,7 @@ window.onload = function () {
     const postText = document.getElementById('post-text');
     const postButton = document.getElementById('post-js');
     const postUrl = `${baseUrl}/api/v1/user/stumblings/`;
-    postButton.onclick = function (res) { //新規作成は確認　search_keyにテキスト保存確認
+    postButton.onclick = res => { //新規作成は確認　search_keyにテキスト保存確認
         const params = {
             method: 'POST',
             headers: {'Content-type': 'application/json;charset=utf-8'},
@@ -39,7 +39,7 @@ window.onload = function () {
     }
     const getButton = document.getElementById('get-js');
     const getUrl = `${baseUrl}/api/v1/user/stumblings/searching`; //json形式でend_timeがnullのものを取得
-    getButton.onclick = function (res) {
+    getButton.onclick = res => {
     fetch(getUrl)
         //.then(function (res) {
         //    return res.json();
@@ -47,7 +47,9 @@ window.onload = function () {
         .then(res => res.json()) //上記のコードを簡略化
         .then(function (jsonData) {
             const getUrlId = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`; //jsonDataに入っているidを取得
+            console.log(jsonData);
             chrome.tabs.create({ url: getUrlId });
         })
+
     }
 };
