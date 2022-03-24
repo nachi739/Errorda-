@@ -33,18 +33,19 @@
 - Errorda!!というサービスで解決する（④）
 
 ## 利用方法
-https://drive.google.com/drive/folders/108RTGf3uz-X9Ge0ZWMlEp0CLeyDDgqGu?usp=sharing
 [chrome_extensions.zip](https://github.com/nachi739/Errorda-/files/8339562/chrome_extensions.zip)
 1. chrome_extensionsのダウンロードをするために上記URLにアクセス
-2. マイドライブ横のchrome_extensionsをクリック
-3. ダウンロードをクリック
-4. 任意の場所に保存
-5. ダウンロードしたzipファイルをダブルクリックで解凍
-6. 新規WEBページを開く。（GoogleChrome）
-7. ブラウザのURLの項目に、chrome://extensionsと打ち込む
-8. 画面右上の「デベロッパーモード」をONにすると、拡張機能のメニューが表示されます。
-9. 「パッケージ化されていない拡張機能を読み込む」をクリックします。
-10. 先ほど保存したファイルを読み込む
+2. 任意の場所に保存
+3. ダウンロードしたzipファイルをダブルクリックで解凍
+4. 新規WEBページを開く。（GoogleChrome）
+5. ブラウザのURLの項目に、chrome://extensionsと打ち込む
+6. 画面右上の「デベロッパーモード」をONにすると、拡張機能のメニューが表示されます。
+<img width="868" alt="スクリーンショット 2022-03-24 17 17 47" src="https://user-images.githubusercontent.com/75469934/159872857-8b058edf-4af5-459a-a2dc-bf5ca4b9d8b9.png">
+
+7. 「パッケージ化されていない拡張機能を読み込む」をクリックします。
+<img width="868" alt="スクリーンショット 2022-03-24 17 23 11" src="https://user-images.githubusercontent.com/75469934/159874265-985c37a5-bebb-413f-b059-c48657925b08.png">
+
+8. 先ほど保存したファイルを読み込む
 
 
 ## 実装した機能についての GIF と説明
