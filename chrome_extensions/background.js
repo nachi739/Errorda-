@@ -1,6 +1,13 @@
 window.onload = function () {
-    let str = prompt('ユーザー名を登録して下さい');
-    alert(str);
+    let name = prompt('ユーザー名を登録して下さい', 'error');
+    let user = (name);
+    localStorage.name = user;
+    console.log(localStorage.name);
+
+
+
+
+
     const searched = document.getElementById('searched');
     const searching = document.getElementById('searching');
     if(searched.style.visibility = "hidden"){

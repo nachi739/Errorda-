@@ -3,7 +3,10 @@
     "description":"error検索の記録",
     "version": "1.0.0",
     "manifest_version": 3,
-    "permissions": ["tabs"],
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
     "host_permissions": [
         "http://127.0.0.1:3000/api/v1/user/stumblings/*"
     ],
