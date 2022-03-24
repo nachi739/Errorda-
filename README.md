@@ -34,6 +34,7 @@
 
 ## 利用方法
 https://drive.google.com/drive/folders/108RTGf3uz-X9Ge0ZWMlEp0CLeyDDgqGu?usp=sharing
+[chrome_extensions.zip](https://github.com/nachi739/Errorda-/files/8339562/chrome_extensions.zip)
 1. chrome_extensionsのダウンロードをするために上記URLにアクセス
 2. マイドライブ横のchrome_extensionsをクリック
 3. ダウンロードをクリック
