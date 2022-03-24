@@ -35,7 +35,7 @@
 
 ## 利用方法
 [chrome_extensions.zip](https://github.com/nachi739/Errorda-/files/8339562/chrome_extensions.zip)
-1. chrome_extensionsのダウンロードをするために上記URLにアクセス
+1. 上記chrome_extensionsのダウンロード
 2. 任意の場所に保存
 3. ダウンロードしたzipファイルをダブルクリックで解凍
 4. 新規WEBページを開く。（GoogleChrome）
@@ -78,9 +78,9 @@
 Error検索を行う際に別サイトにアクセスするというのは利用するハードルを
 上げ、利用しなくなる一番の原因になると考えていました。
 Errorの記録を残す際に３つの手順があると思います。
-１、Errorについて調べる
-２、Errorに掛かった時間を測る
-３、Error解決時の参考URL・メモなどを記録する
+- １、Errorについて調べる
+- ２、Errorに掛かった時間を測る
+- ３、Error解決時の参考URL・メモなどを記録する
 そこで普段から利用しているGoogleChromeの拡張機能を採用することにしました。
 理由としては上記三項目の１と２をGoogle内での完結をしたいと思ったからです。
 本格的な実装などの記事などが少なく基本的には公式のサンプルからヒントを得て実装を行いました。
