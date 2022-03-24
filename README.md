@@ -3,6 +3,7 @@
 ## サービスの概要
 
 **Errorda!!はError解決のプロセスと成長過程を可視化するためのものです。**
+**エラー文を検索する際にエラー文の保存とクローム検索を一度に行います。**
 
 - Error解決に掛かった時間を記録します。
 - Error解決直後に解決に至るまでに閲覧したURLや解決のヒントなどをメモに残すことができます。
@@ -61,7 +62,7 @@ https://drive.google.com/drive/folders/108RTGf3uz-X9Ge0ZWMlEp0CLeyDDgqGu?usp=sha
 - Ruby on Rails
 - Chrome Extensions 3
 - Bootstrap 5
-- PostgreSQL
+- PostgreSQL 14.2
 
 ## GIF
 ![Errorda demo](https://user-images.githubusercontent.com/75469934/159679049-ecf86959-ebcc-4246-9aaa-cfc91601e949.gif)
