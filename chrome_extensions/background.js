@@ -1,8 +1,18 @@
 window.onload = function () {
-    let name = prompt('ユーザー名を登録して下さい', 'error');
+
+    let name = prompt('ユーザー名を登録して下さい', 'error'); //アラートの表示
     let user = (name);
-    localStorage.name = user;
-    console.log(localStorage.name);
+    chrome.storage.local.set({key: user}, function() { //入力されたユーザー名をクロームストレージに保存
+        console.log(user);
+    });
+
+    chrome.storage.local.get(['key'], function(result) {
+        console.log(result.key);
+    });
+
+
+
+
 
 
 
