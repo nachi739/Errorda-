@@ -10,6 +10,9 @@ window.onload = function () {
                 console.log(user);
             });
         }
+        const user = document.getElementById('user');
+        user.textContent = result.key;
+
     });
 
 
