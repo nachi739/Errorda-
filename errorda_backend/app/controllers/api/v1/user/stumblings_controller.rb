@@ -11,7 +11,7 @@ class Api::V1::User::StumblingsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: 'error') || User.create(name: 'error')
+    user = User.find_by(name: params[:name]) || User.create(name: params[:name])
           #該当のデータを引っ張って来る           #なければ新しく作成する
       @stu = Stumbling.new(user_name: user.name, search_key: params[:search_key])
       @stu.save
@@ -44,7 +44,7 @@ class Api::V1::User::StumblingsController < ApplicationController
   end
 
   def searching
-    user = User.find_by(name: 'error') || User.create(name: 'error')
+    user = User.find_by(name: params[:name]) || User.create(name: params[:name])
 
     searching_error = user.stumblings.where(end_time: nil).first
     #今なんの検索をしているのかを向こうに渡している

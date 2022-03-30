@@ -1,28 +1,31 @@
+//アイコンクリック時に動作するため
 window.onload = function () {
-
-    chrome.storage.local.get(['key'], function(result) { //ローカルストレージの値を取得
+    //ローカルストレージの値を取得
+    chrome.storage.local.get(['key'], function(result) {
+        //保存されている名前の確認のため
         console.log(result.key);
-        if(result.key === null) { //登録されているかの有無の確認
-            const name = prompt('ユーザー名を登録して下さい', 'error'); //アラートの表示
-            const user = (name);
-
-            chrome.storage.local.set({key: user}, function() { //値をクロームストレージに保存
-                console.log(user);
+        //登録されているかの有無の確認 初回のみ実行
+        if(result.key === null) {
+            //アラートの表示 現段階では初回表示のみ
+            const name = prompt('ユーザー名を登録して下さい', 'error');
+            //値をクロームストレージに保存
+            chrome.storage.local.set({key: name}, function() {
+                //保存された値の確認
+                console.log(name);
             });
         }
+        //popup.htmlで表示するための記述
         const user = document.getElementById('user');
+        //そのまま文字として出力するため
         user.textContent = result.key;
-
-    });
-
-
-
-
-
-
-
-
-
+        //ユーザー名をポストする
+        const params = {
+            method: 'POST',
+            headers: {'Content-type': 'application/json;charset=utf-8'},
+            body: JSON.stringify({name: result.key})
+        };
+        fetch("http://127.0.0.1:3000/api/v1/user/stumblings/", params)
+        .then(res => res.json());
 
 
     const searched = document.getElementById('searched');
@@ -34,7 +37,8 @@ window.onload = function () {
     const baseUrl = "http://127.0.0.1:3000"; //開発用
     //const baseUrl ="https://errorda-backend.herokuapp.com/" //プロダクト用
     const url = `${baseUrl}/api/v1/user/stumblings/searching`;
-    fetch(url) //ユーザ情報を認識する
+    fetch(url ,params) //ユーザ情報を認識する
+
         .then(res => res.json())
         .then(function (jsonData) {
             if (jsonData) { //検索窓の表示・非表示
@@ -56,7 +60,7 @@ window.onload = function () {
         const params = {
             method: 'POST',
             headers: {'Content-type': 'application/json;charset=utf-8'},
-            body: JSON.stringify({search_key: postText.value})
+            body: JSON.stringify({name: result.key, search_key: postText.value})
         };
         fetch(postUrl, params)
         .then(res => res.json());
@@ -66,7 +70,7 @@ window.onload = function () {
     const getButton = document.getElementById('get-js');
     const getUrl = `${baseUrl}/api/v1/user/stumblings/searching`; //json形式でend_timeがnullのものを取得
     getButton.onclick = res => {
-    fetch(getUrl)
+    fetch(getUrl, params)
         //.then(function (res) {
         //    return res.json();
         //})
@@ -78,4 +82,5 @@ window.onload = function () {
         })
 
     }
+});
 };
