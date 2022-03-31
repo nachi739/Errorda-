@@ -1,21 +1,39 @@
-@charset "UTF-8"; /*コードの文字化けを防ぐ*/
+@charset "UTF-8";
+
+/*コードの文字化けを防ぐ*/
 html {
-    font-size: 100%; /*ユーザーの設定した文字サイズを正しく反映*/
+    font-size: 100%;
+    /*ユーザーの設定した文字サイズを正しく反映*/
 }
+
 body {
     min-width: 350px;
     min-height: 150px;
     background-color: white;
 }
+
 header {
     margin-top: 4%;
     padding: 0 4%;
     color: red;
 }
+
 /* エラー検索中テキスト */
 h3 {
     font-family: sans-serif;
 }
+
+p.user {
+    margin: -2.25em 0 10px;
+    font-size: 100%;
+    line-height: 1.5;
+    text-align: right;
+}
+
+p:before {
+    content: "ユーザー名：";
+}
+
 .group {
     --gap: 0.2rem;
     display: flex;
@@ -25,7 +43,9 @@ h3 {
     padding-bottom: 1rem;
     list-style-type: none;
 }
-.btn, #post-text {
+
+.btn,
+#post-text {
     /* ユーザーエージェントスタイルシートをリセット */
     background-color: transparent;
     padding: 0;
@@ -40,18 +60,22 @@ h3 {
     border-width: 2px;
     border-style: solid;
 }
+
 /* input */
-#post-text{
-	-webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
-	width: 250px;
-	height: 30px;
+#post-text {
+    -webkit-appearance: none;
+    /*SafariやChromeのデフォルトの設定を無効*/
+    width: 250px;
+    height: 30px;
     padding: 0 0 0 35px;
     box-shadow: 2px 2px gainsboro;
-	border: none;
-	background:#fff url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/7-2-3/img/icon_search.svg") no-repeat 17px center;/*虫眼鏡アイコンを背景に表示*/
-	background-size: 15px 15px;
+    border: none;
+    background: #fff url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/7-2-3/img/icon_search.svg") no-repeat 17px center;
+    /*虫眼鏡アイコンを背景に表示*/
+    background-size: 15px 15px;
     --padding-x: 0.5em;
 }
+
 /* button  */
 .btn {
     display: inline-flex;
@@ -68,11 +92,13 @@ h3 {
 
     transition: .2s;
 }
+
 .btn:hover {
     outline: none;
     border-color: gray;
     box-shadow: 2px 2px gray;
 }
+
 .btn:active {
     transform: translateY(2px);
 }
