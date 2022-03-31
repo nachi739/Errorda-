@@ -1,25 +1,22 @@
 class Api::V1::User::StumblingsController < ApplicationController
-
-  skip_before_action :verify_authenticity_token, only: [:create, :searching]
   #CSRFトークン検証をスキップするため
+  skip_before_action :verify_authenticity_token, only: [:create, :searching]
 
   protect_from_forgery
 
   def index
-    #@stumblings = Stumbling.all #veiw側で表示するため
+    #検証のため５件表示　今後変更する
     @stumblings = Stumbling.all.page(params[:page]).per(5)
   end
 
   def create
+          #該当のデータを引っ張って来る              #なければ新しく作成する
     user = User.find_by(name: params[:name]) || User.create(name: params[:name])
-    #user = User.find_by(name: 'error') || User.create(name: 'error')
-          #該当のデータを引っ張って来る           #なければ新しく作成する
       @stu = Stumbling.new(user_name: user.name, search_key: params[:search_key])
       @stu.save
-      p params #paramsの内容をログに出力している
-      #render head :created #成功したことを教える
+      #paramsの内容をログに出力している
+      p params
       head :created and return
-
   end
 
   def edit
@@ -31,15 +28,16 @@ class Api::V1::User::StumblingsController < ApplicationController
     @stu.end_time =  Time.current
     @stu.memo = "参考URL\n・\n・\n・\n解決に至るまでの経緯\n・\n・\n・"
     @stu.save
-    redirect_to action: :edit #end_timeを保存した後編集画面遷移
+    #end_timeを保存した後編集画面遷移
+    redirect_to action: :edit
   end
 
   def show
   end
 
   def update
-    p params #paramsの内容をログに出力している
-
+    #paramsの内容をログに出力している
+    p params
     @user = User.find_by(id: params[:id])
     @stumbling = Stumbling.find(params[:id])
     @stumbling.update(update_params)
@@ -47,14 +45,13 @@ class Api::V1::User::StumblingsController < ApplicationController
   end
 
   def searching
+    p params[:name]
     user = User.find_by(name: params[:name]) || User.create(name: params[:name])
-    #user = User.find_by(name: 'error') || User.create(name: 'error')
-
-    searching_error = user.stumblings.where(end_time: nil).first
     #今なんの検索をしているのかを向こうに渡している
-
+    searching_error = user.stumblings.where(end_time: nil).first
     if searching_error.nil?
-      head :not_found #リソースが存在しないエラーを渡す
+      #リソースが存在しないエラーを渡す
+      head :not_found
     else
       render json: searching_error
     end
@@ -63,7 +60,8 @@ class Api::V1::User::StumblingsController < ApplicationController
   private
 
     def update_params
-      params.require(:stumbling).permit( :name, :dictionary_key, :memo) #search_keyは変更不可にするため外しています
+      #search_keyは変更不可にするため外しています
+      params.require(:stumbling).permit( :name, :dictionary_key, :memo)
     end
 
 end
