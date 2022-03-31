@@ -2,6 +2,7 @@
 <table class="table table-striped">
 <thead>
         <tr>
+            <th scope="col">ユーザー名</th>
             <th scope="col">Error解決後タイトル</th>
             <th scope="col">Error検索時タイトル</th>
             <th scope="col">Error解決に至るまでのメモ</th>
@@ -11,11 +12,12 @@
     <tbody >
     <% @stumblings.each do |stumbling| %>
         <tr >
-            <td ><%= stumbling.dictionary_key %></td>
-            <td ><%= stumbling.search_key ? stumbling.search_key.truncate(12, omission: '...') : '' %></td>
-            <td ><%= stumbling.memo ? stumbling.memo.truncate(12, omission: '...') : '' %></td>
-            <td ><%= stumbling.end_time ? "#{(stumbling.end_time - stumbling.created_at).to_i/60}分" : '検索中' %></td>
-            <td ><%= link_to '編集', edit_api_v1_user_stumbling_path(stumbling) %></td>
+            <td><%= stumbling.user_name %></td>
+            <td><%= stumbling.dictionary_key %></td>
+            <td><%= stumbling.search_key ? stumbling.search_key.truncate(12, omission: '...') : '' %></td>
+            <td><%= stumbling.memo ? stumbling.memo.truncate(12, omission: '...') : '' %></td>
+            <td><%= stumbling.end_time ? "#{(stumbling.end_time - stumbling.created_at).to_i/60}分" : '検索中' %></td>
+            <td><%= link_to '編集', edit_api_v1_user_stumbling_path(stumbling) %></td>
         </tr>
     <% end %>
     </tbody>
