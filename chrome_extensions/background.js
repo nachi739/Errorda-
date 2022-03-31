@@ -1,126 +1,108 @@
+//厳格モードのため記述
+'use strict';
+//アイコンクリック時に動作するため記述
 window.onload = function () {
-  //開発用
+//開発用
   const baseUrl = "http://127.0.0.1:3000";
-  //プロダクト用
-  //const baseUrl ="https://errorda-backend.herokuapp.com/"
-  //
-  const url = `${baseUrl}/api/v1/user/stumblings/searching`;
-  //検索窓
+//プロダクト用
+	//const baseUrl ="https://errorda-backend.herokuapp.com/";
+//検索中errorを認識するため
+  const searchUrl = `${baseUrl}/api/v1/user/stumblings/searching`;
+//新規検索・一覧画面遷移
+  const url = `${baseUrl}/api/v1/user/stumblings/`;
+//検索窓
   const searched = document.getElementById('searched');
-  //検索中
+//検索中
   const searching = document.getElementById('searching');
-  //一覧画面に遷移するためのボタン
-  const  listButton = document.getElementById('list-js');
-  //一覧画面に遷移するURL
-  const listURL = `${baseUrl}/api/v1/user/stumblings/`;
-  //検索時のテキスト
-  const postText = document.getElementById('post-text');
-  //検索開始ボタン
+//検索開始ボタン
   const postButton = document.getElementById('post-js');
-  //
-  const postUrl = `${baseUrl}/api/v1/user/stumblings/`;
-	//
-	const postUser = `${baseUrl}/api/v1/users/`;
-  //
-  const getButton = document.getElementById('get-js');
-  //
-  //const getUrl = `${baseUrl}/api/v1/user/stumblings/searching`;
-  //chromeストレージの値を取得
+//検索時のテキスト
+  const postText = document.getElementById('post-text');
+//error解決時のボタン
+  const fixButton = document.getElementById('fix-js');
+//一覧画面に遷移するためのボタン
+  const  listButton = document.getElementById('list-js');
+//chromeストレージの値を取得
   chrome.storage.local.get(['key'], function(result) {
-    //保存されている名前の確認のため
+  //検証で保存された値の確認
     console.log(result.key);
-    //登録されているかの有無の確認 初回のみ実行
+  //登録されているかの有無の確認 初回のみ実行
     if(result.key === null) {
-        //アラートの表示 現段階では初回表示のみ
-        const name = prompt('ユーザー名を登録して下さい', 'error');
-        //値をクロームストレージに保存
-        chrome.storage.local.set({key: name}, function() {
-            //保存された値の確認
-            console.log(name);
-        });
-    }
-    //popup.htmlで表示するための記述
+    //アラートの表示 現段階では初回表示のみ
+      const name = prompt('ユーザー名を登録して下さい', 'error');
+    //値をクロームストレージに保存
+      chrome.storage.local.set({key: name}, function() {
+      //検証で値の確認
+        console.log(name);
+      });
+    };
+  //popup.htmlで表示するための記述
     const user = document.getElementById('user');
-    //そのまま文字として出力するため
+  //そのまま文字として出力する
     user.textContent = result.key;
-    //ユーザー名をポストする
+  //ユーザー名をポストする
     const params = {
       method: 'POST',
       headers: {'Content-type': 'application/json;charset=utf-8'},
       body: JSON.stringify({name: result.key})
     };
-    fetch(postUrl, params)
-      .then(res => res.json())
-			.then(function (jsonData){
-				console.log(jsonData);
-			})
-			// fetch(url, params)
-      // .then(res => res.json())
-			// .then(function (jsonData){
-			// 	console.log(jsonData);
-			// })
-    //
+  //検索窓が非表示の場合
     if(searched.style.visibility = "hidden"){
-      //
+    //検索窓　表示
       searched.style.visibility = "visible";
-      //
+    //検索中　非表示
       searching.style.visibility = "hidden";
-    }
-    //ユーザ情報を認識する
-    fetch(url ,params)
-      //
+    };
+  //ユーザ情報を認識する
+    fetch(searchUrl ,params)
       .then(res => res.json())
-      //
       .then(function (jsonData) {
-        //検索窓の表示・非表示
+      //検索窓の表示・非表示
         if (jsonData) {
+        //検索窓　非表示
           searched.style.visibility = "hidden";
+        //検索中　表示
           searching.style.visibility = "visible";
-        }
-        //検証でどのエラーを取ってきているか確認
+        };
+      //検証で該当データの確認
         console.log(jsonData);
-        //検証でidを確認するため
+      //検証でidを確認
         console.log(jsonData.id);
       })
-    //一覧画面遷移
-    listButton.onclick = function () {
-      //
-      chrome.tabs.create({ url: listURL });
-    };
-    //新規作成は確認　search_keyにテキスト保存確認
+  //error検索ボタンクリック時イベント
     postButton.onclick = res => {
       const params = {
-          method: 'POST',
-          headers: {'Content-type': 'application/json;charset=utf-8'},
-          body: JSON.stringify({name: result.key, search_key: postText.value})
+        method: 'POST',
+        headers: {'Content-type': 'application/json;charset=utf-8'},
+        body: JSON.stringify({name: result.key, search_key: postText.value})
       };
-      fetch(postUrl, params)
+      fetch(url, params)
         .then(res => res.json());
-        //
-        const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(postText.value);
-        //新規タブでsearch_keyの内容を検索
-        chrome.tabs.create({ url: searchURL });
-    }
-    getButton.onclick = res => {
+      //Chrome検索するために定義
+        const searchingUrl = 'https://www.google.com/search?q=' + encodeURIComponent(postText.value);
+      //新規タブで入力された文字列をChrome検索
+        chrome.tabs.create({ url: searchingUrl });
+    };
+  //error解決ボタンクリック時イベント
+    fixButton.onclick = res => {
 			const params = {
 				method: 'POST',
 				headers: {'Content-type': 'application/json;charset=utf-8'},
 				body: JSON.stringify({name: result.key})
 			};
-      fetch(url, params)
-          //.then(function (res) {
-          //    return res.json();
-          //})
-          //上記のコードを簡略化
-          .then(res => res.json())
-          .then(function (jsonData) {
-              //jsonDataに入っているidを取得
-              const getUrl = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`;
-              //
-              console.log(jsonData);
-              //
-              chrome.tabs.create({ url: getUrl });
-          })
-    }
-  })
-}
+      fetch(searchUrl, params)
+        .then(res => res.json())
+        .then(function (jsonData) {
+        //jsonDataに入っているidを取得
+          const getUrl = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`;
+        //新規タブで編集画面に遷移
+          chrome.tabs.create({ url: getUrl });
+        });
+    };
+  //一覧画面ボタンクリック時イベント
+    listButton.onclick = function () {
+    //一覧画面に新規タブでアクセスする
+      chrome.tabs.create({ url: url });
+    };
+  });
+};
