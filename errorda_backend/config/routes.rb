@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :user do
-        get 'stumblings/searching', to: 'stumblings#searching'
+        post 'stumblings/searching', to: 'stumblings#searching'
         get 'stumblings/:id', to: 'stumblings#end_time',as: :stumblings
         resources :stumblings, only: [:index, :create, :edit, :update, :show]
 
