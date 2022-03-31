@@ -12,11 +12,14 @@ class Api::V1::User::StumblingsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:name]) || User.create(name: params[:name])
+    #user = User.find_by(name: 'error') || User.create(name: 'error')
           #該当のデータを引っ張って来る           #なければ新しく作成する
       @stu = Stumbling.new(user_name: user.name, search_key: params[:search_key])
       @stu.save
       p params #paramsの内容をログに出力している
-      render head :created #成功したことを教える
+      #render head :created #成功したことを教える
+      head :created and return
+
   end
 
   def edit
@@ -37,7 +40,7 @@ class Api::V1::User::StumblingsController < ApplicationController
   def update
     p params #paramsの内容をログに出力している
 
-    #@user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
     @stumbling = Stumbling.find(params[:id])
     @stumbling.update(update_params)
     redirect_to root_path
@@ -45,6 +48,7 @@ class Api::V1::User::StumblingsController < ApplicationController
 
   def searching
     user = User.find_by(name: params[:name]) || User.create(name: params[:name])
+    #user = User.find_by(name: 'error') || User.create(name: 'error')
 
     searching_error = user.stumblings.where(end_time: nil).first
     #今なんの検索をしているのかを向こうに渡している
