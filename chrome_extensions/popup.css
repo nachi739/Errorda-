@@ -15,12 +15,16 @@ body {
 header {
     margin-top: 4%;
     padding: 0 4%;
+}
+
+h1 {
     color: red;
 }
 
 /* エラー検索中テキスト */
 h3 {
     font-family: sans-serif;
+    color: red;
 }
 
 p.user {
