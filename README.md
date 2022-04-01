@@ -34,7 +34,7 @@
 - Errorda!!というサービスで解決する（④）
 
 ## 利用方法
-[chrome_extensions.zip](https://github.com/nachi739/Errorda-/files/8339562/chrome_extensions.zip)
+[chrome_extensions.zip](https://github.com/g-z2h/001_N/files/8396766/chrome_extensions.zip)
 1. 上記chrome_extensionsのダウンロード
 2. 任意の場所に保存
 3. ダウンロードしたzipファイルをダブルクリックで解凍
