@@ -35,7 +35,7 @@
 
 ## 利用方法
 [chrome_extensions.zip](https://github.com/g-z2h/001_N/files/8396766/chrome_extensions.zip)
-1. 上記chrome_extensionsのダウンロード
+1. 上記chrome_extensionsのダウンロード ※現在公開に向けて審査中
 2. 任意の場所に保存
 3. ダウンロードしたzipファイルをダブルクリックで解凍
 4. 新規WEBページを開く。（GoogleChrome）
