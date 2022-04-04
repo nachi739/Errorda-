@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @user = build(:user)
+  end
+
+  describe ' test' do
+    it ' test' do
+      expect(@user)
+    end
+  end
 end
