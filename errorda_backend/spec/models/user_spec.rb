@@ -6,8 +6,8 @@ RSpec.describe User, type: :model do
   end
 
   describe ' test' do
-    it ' test' do
-      expect(@user)
+    it ' ユーザー名がそのまま変えること' do
+      expect(@user.name).to eq 'test'
     end
   end
 end
