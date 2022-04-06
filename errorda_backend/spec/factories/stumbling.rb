@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :stumbling do
-    #association :user
+    user_name {"test"}
   end
 end
