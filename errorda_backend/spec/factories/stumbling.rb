@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :stumbling do
-    user_name {"test"}
+    #belongs_to
+    user
   end
 end
