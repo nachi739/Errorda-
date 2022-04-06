@@ -22,6 +22,9 @@ RSpec.describe User, type: :model do
       it 'updated_atの確認' do
         expect(@user.updated_at).to eq @user.updated_at
       end
+      it 'stumbling.user_nameとuser.nameが同一か確認' do
+        expect(@user.name).to eq @stumbling.user_name
+      end
     end
   end
 end
