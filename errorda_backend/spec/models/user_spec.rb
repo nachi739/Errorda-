@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) {FactoryBot.create(:user)}
   before do
-    @user = build(:user)
+    @user = FactoryBot.create(:user)
+    @stumbling = FactoryBot.create(:stumbling)
   end
   describe 'ユーザーmodelについてのテスト' do
     context '保存後' do
@@ -23,8 +23,6 @@ RSpec.describe User, type: :model do
         expect(@user.updated_at).to eq @user.updated_at
       end
     end
-
   end
-
 end
 
