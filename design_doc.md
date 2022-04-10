@@ -40,7 +40,7 @@
 ## 選択した技術
 
 - JavaScript（Chrome拡張機能を利用するため）
-- Ruby + Ruby on Rails（情報が多いため）
+- Rails（情報が多いため）
 - Heroku（簡易的に実現するため）
 
 ## 実装
