@@ -10,30 +10,30 @@ window.onload = function () {
   const postText = document.getElementById('post-text');
   const fixButton = document.getElementById('fix-js');
   const listButton = document.getElementById('list-js');
-  var users;
 
-  const getChromeName = () => {
-    return chrome.storage.local.get(['key'], result => {
-      if(result.key === null) {
-        const name = prompt('ユーザー名を登録して下さい', 'error');
-        chrome.storage.local.set({key: name});
-      };
-      let user = document.getElementById('user');
-      user.textContent = result.key;
-      users = result.key;
 
-    })
+  //初回のみユーザー名を登録
+  const setChromeName = () => {
+    if(name === null) {
+      const name = prompt('ユーザー名を登録して下さい', 'error');
+      chrome.storage.local.set({key: name});
+    };
   }
 
-  const name = getChromeName()
-  console.log(users)
+  //ユーザー名を表示
+  const popUser = () => {
+    let user = document.getElementById('user');
+    user.textContent = name;
+  }
 
+  //ユーザー情報を投げる
   const post = () => {
     const params = {
       method: 'POST',
       headers: {'Content-type': 'application/json;charset=utf-8'},
       body: JSON.stringify({name: name})
     };
+
     if(searched.style.visibility = "hidden"){
       searched.style.visibility = "visible";
       searching.style.visibility = "hidden";
@@ -48,10 +48,8 @@ window.onload = function () {
       })
   }
 
-  post()
-
+  //検索開始
   const startSearch = () => {
-    postButton.onclick = () => {
       const params = {
         method: 'POST',
         headers: {'Content-type': 'application/json;charset=utf-8'},
@@ -61,36 +59,33 @@ window.onload = function () {
         .then(res => res.json());
           const searchingUrl = 'https://www.google.com/search?q=' + encodeURIComponent(postText.value);
           chrome.tabs.create({ url: searchingUrl });
-    };
   }
 
-  startSearch()
-
-
+  //検索終了・編集画面
   const endSearch = () => {
-    fixButton.onclick = () => {
-			const params = {
-				method: 'POST',
-				headers: {'Content-type': 'application/json;charset=utf-8'},
-				body: JSON.stringify({name: name})
-			};
-      fetch(searchUrl, params)
-        .then(res => res.json())
-        .then(function (jsonData) {
-          const getUrl = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`;
-          chrome.tabs.create({ url: getUrl });
-        });
-    };
+		const params = {
+			method: 'POST',
+			headers: {'Content-type': 'application/json;charset=utf-8'},
+			body: JSON.stringify({name: name})
+		};
+    fetch(searchUrl, params)
+      .then(res => res.json())
+      .then(function (jsonData) {
+        const getUrl = `${baseUrl}/api/v1/user/stumblings/${jsonData.id}`;
+        chrome.tabs.create({ url: getUrl });
+    });
   }
 
-  endSearch()
-
-
+  //一覧画面
   const list = () => {
-    listButton.onclick = () => {
       chrome.tabs.create({ url: url });
-    };
-  }
-  list()
+  };
+
+  setChromeName();
+  popUser();
+  post()
+  postButton.onclick = () => { startSearch() };
+  fixButton.onclick = () => { endSearch() };
+  listButton.onclick = () => { list() };
 
   }
