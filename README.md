@@ -71,7 +71,7 @@
 
 - Javascript
 - Ruby 2.6.5
-- Ruby on Rails 6.1.4.6
+- Rails 6.1.4.6
 - Chrome Extensions 3
 - Bootstrap 5
 - PostgreSQL 14.2
