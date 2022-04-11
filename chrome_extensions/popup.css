@@ -38,6 +38,14 @@ p:before {
     content: "ユーザー名：";
 }
 
+#searched {
+    visibility: hidden;
+}
+
+#searching {
+    visibility: visible;
+}
+
 .group {
     --gap: 0.2rem;
     display: flex;

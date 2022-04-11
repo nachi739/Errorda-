@@ -11,7 +11,6 @@ window.onload = function () {
   const fixButton = document.getElementById('fix-js');
   const listButton = document.getElementById('list-js');
 
-
   //初回のみユーザー名を登録
   const setChromeName = () => {
     if(name === null) {
@@ -33,18 +32,11 @@ window.onload = function () {
       headers: {'Content-type': 'application/json;charset=utf-8'},
       body: JSON.stringify({name: name})
     };
-
-    if(searched.style.visibility = "hidden"){
-      searched.style.visibility = "visible";
-      searching.style.visibility = "hidden";
-    };
     fetch(searchUrl ,params)
-      .then(res => res.json(name))
-      .then(function (jsonData) {
-        if (jsonData) {
-          searched.style.visibility = "hidden";
-          searching.style.visibility = "visible";
-        };
+      .then(res => res.json())
+      .catch(function () {
+        searched.style.visibility = "visible";
+        searching.style.visibility = "hidden";
       })
   }
 
