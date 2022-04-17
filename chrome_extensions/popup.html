@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="error解決の記録">
+    <!--  CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="popup.css" rel="stylesheet">
+    <title>Errorda!!</title>
+</head>
+<body>
+    <header>
+        <h1>Errorda!!</h1>
+        <p id="user" class="user"></p>
+        <h3 id="searching">　〜error検索中〜</h3>
+    </header>
+    <ul  id="searched" class="group">
+        <li>
+            <input type="text" id="post-text">
+        </li>
+        <li>
+            <button id="post-js" class="btn">error検索</button>
+        </li>
+    </ul>
+    <ul class="group">
+        <li>
+            <button id="fix-js" class="btn">error解決</button>
+        </li>
+    </ul>
+    <ul class="group">
+        <li>
+            <button id="list-js" class="btn">一覧画面</button>
+        </li>
+    </ul>
+    <script src="./fetchChromeName.js"></script>
+    <script src="./module.js"></script>
+    <script src="./background.js"></script>
+</body>
+</html>

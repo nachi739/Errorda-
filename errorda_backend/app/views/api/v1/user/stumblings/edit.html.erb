@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <%= form_with(model: @stumbling, url: api_v1_user_stumbling_path, method: :patch) do |f| %>
+            <div>search_key(変更不可)</div>
+            <p class="text-secondary text-opacity-30 pt-2"><%= @stumbling.search_key %></p>
+            <%= f.label :dictionary_key, "dictionary_key" %>
+            <%= f.text_field :dictionary_key , class:"form-control bg-warning text-dark bg-opacity-10 ", placeholder:"本タイトルを入力してください" %>
+            <%= f.label :memo, "error解決に至るまでのメモ" %>
+            <%= f.text_area :memo , size: "25x15", class: "form-control bg-warning text-dark bg-opacity-10" %>
+            <%= f.submit "更新する" %>
+        <% end %>
+    </div>
+</div>
