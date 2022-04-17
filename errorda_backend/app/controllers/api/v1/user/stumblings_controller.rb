@@ -28,7 +28,7 @@ class Api::V1::User::StumblingsController < ApplicationController
     @stu.end_time =  Time.current
     @stu.memo = "参考URL\n・\n・\n・\n解決に至るまでの経緯\n・\n・\n・"
     @stu.save
-    #end_timeを保存した後編集画面遷移
+    #上記は本来モデルに書くため今後修正予定
     redirect_to action: :edit
   end
 
